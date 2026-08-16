@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ذِكر | الأذكار</title>
+<style>
+body{margin:0;background:#f8f6ef;color:#29382d;font-family:Arial,sans-serif;line-height:1.9}
+header{padding:20px 6%;background:#526b55;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:30px;font-weight:700}header a{color:#fff;text-decoration:none}
+main{max-width:900px;margin:auto;padding:45px 6%}
+h1,h2{font-family:Georgia,serif}.intro{color:#6d7a72}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:25px 0}.tabs button{border:1px solid #ddd6c5;background:#fffdf8;border-radius:12px;padding:10px 15px;cursor:pointer}
+.tabs button.active{background:#526b55;color:white}
+.dhikr{background:#fffdf8;border:1px solid #e6e0d2;border-radius:20px;padding:25px;margin:15px 0}
+.count{font-size:14px;color:#718078;margin-top:15px}.counter{display:flex;align-items:center;gap:12px;margin-top:15px}
+.counter button{border:0;background:#526b55;color:white;border-radius:12px;padding:10px 18px;font-size:15px;cursor:pointer}
+.num{font-weight:bold;min-width:45px;text-align:center}.source{font-size:13px;color:#718078;border-top:1px solid #eee8dc;margin-top:18px;padding-top:12px}
+.note{background:#eeeade;border-radius:16px;padding:15px;font-size:14px;margin:25px 0}
+</style>
+</head>
+<body>
+<header><div class="logo">ذِكر 🌿</div><a href="index.html">الرئيسية</a></header>
+<main>
+<h1>الأذكار</h1>
+<p class="intro">اختر القسم الذي يناسب وقتك، واقرأ بهدوء. لكل ذكر مصدره، ونراجع المحتوى قبل نشره.</p>
+<div class="tabs">
+<button class="active" onclick="show('morning',this)">☀️ الصباح</button>
+<button onclick="show('evening',this)">🌙 المساء</button>
+<button onclick="show('sleep',this)">🛏️ النوم</button>
+<button onclick="show('prayer',this)">🕌 بعد الصلاة</button>
+</div>
+
+<section id="morning">
+<h2>☀️ أذكار الصباح</h2>
+<div class="note">هذه النسخة الأولى تستخدم نصوصًا تجريبية للتصميم. لا تعتمد الصفحة للنشر العام حتى تُراجع النصوص وتخريجها مراجعة علمية.</div>
+<div class="dhikr"><div>سُبْحَانَ اللهِ وَبِحَمْدِهِ</div><div class="count">التكرار المقترح في هذا النموذج: 100 مرة</div><div class="counter"><button onclick="inc(this)">تم</button><span class="num">0</span></div><div class="source">المصدر: يُراجع التخريج قبل الإطلاق النهائي.</div></div>
+<div class="dhikr"><div>اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ، وَأَعُوذُ بِكَ مِنْ شَرِّهِ.</div><div class="source">المصدر: نموذج تصميم — يُستبدل بالنص الثابت مع تخريجه.</div></div>
+</section>
+
+<section id="evening" hidden><h2>🌙 أذكار المساء</h2><div class="dhikr">صفحة المساء جاهزة للتعبئة بالمحتوى الموثق.</div></section>
+<section id="sleep" hidden><h2>🛏️ أذكار النوم</h2><div class="dhikr">صفحة النوم جاهزة للتعبئة بالمحتوى الموثق.</div></section>
+<section id="prayer" hidden><h2>🕌 أذكار بعد الصلاة</h2><div class="dhikr">صفحة أذكار الصلاة جاهزة للتعبئة بالمحتوى الموثق.</div></section>
+</main>
+<script>
+function show(id,btn){document.querySelectorAll('main section').forEach(x=>x.hidden=true);document.getElementById(id).hidden=false;document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
+function inc(btn){let n=btn.parentElement.querySelector('.num');n.textContent=+n.textContent+1}
+</script>
+</body>
+</html>
